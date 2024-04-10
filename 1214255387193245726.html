@@ -26,6 +26,8 @@ h1 { font-family: "Kimberley", sans-serif }
 <select id='col'>
 	<option value='cs'>Full Collection</option>
 	
+	<option value=BaseSet>Base Set</option>
+	
 	<option value=TheDrones>The Drones</option>
 	
 	<option value=ThisLittleBlightofMine>This Little Blight of Mine</option>
@@ -198,6 +200,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>1st</td>
 	    <td>0.68</td>
 	    <td>2024-03-29 00:41:09</td>
+	</tr>
+	
+	<tr>
+	    <td>70</td>
+	    <td>1/8</td>
+	    <td>(#9) Stirge</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>1st</td>
+	    <td>0.5</td>
+	    <td>2024-03-29 00:41:23</td>
 	</tr>
 	
 	<tr>
@@ -1533,18 +1547,6 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
 	
 	<tr>
-	    <td>560</td>
-	    <td>1/8</td>
-	    <td>(#1) Blood Hawk</td>
-	    <td>BS</td>
-	    <td>6</td>
-	    <td>No</td>
-	    <td>Unlimited</td>
-	    <td>0.6</td>
-	    <td>2024-04-08 16:08:12</td>
-	</tr>
-	
-	<tr>
 	    <td>561</td>
 	    <td>4</td>
 	    <td>(#130) Succubus</td>
@@ -1628,7 +1630,31 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>2024-04-08 16:08:51</td>
 	</tr>
 	
+	<tr>
+	    <td>568</td>
+	    <td>15</td>
+	    <td>(#236) Purple Worm</td>
+	    <td>BS</td>
+	    <td>6</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>47.232</td>
+	    <td>2024-04-09 13:36:01</td>
+	</tr>
+	
     </tbody>
+</table>
+
+<table id="BaseSet" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	</tbody>
 </table>
 
 <table id="TheDrones" class="display tbl" width="100%">
@@ -2929,6 +2955,8 @@ $(document).ready(function(){
 
 
     new DataTable('#cs', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:2},{type: 'cr', targets:1}]})
+    
+		new DataTable('#BaseSet', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}]})
     
 		new DataTable('#TheDrones', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}]})
     
