@@ -26,6 +26,8 @@ h1 { font-family: "Kimberley", sans-serif }
 <select id='col'>
 	<option value='cs'>Full Collection</option>
 	
+	<option value=BaseSet>Base Set</option>
+	
 	<option value=TheDrones>The Drones</option>
 	
 	<option value=ThisLittleBlightofMine>This Little Blight of Mine</option>
@@ -476,7 +478,31 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>2024-04-07 03:38:43</td>
 	</tr>
 	
+	<tr>
+	    <td>569</td>
+	    <td>7</td>
+	    <td>(#170) Shield Guardian</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>5.39</td>
+	    <td>2024-04-10 01:35:29</td>
+	</tr>
+	
     </tbody>
+</table>
+
+<table id="BaseSet" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	</tbody>
 </table>
 
 <table id="TheDrones" class="display tbl" width="100%">
@@ -1777,6 +1803,8 @@ $(document).ready(function(){
 
 
     new DataTable('#cs', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:2},{type: 'cr', targets:1}]})
+    
+		new DataTable('#BaseSet', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}]})
     
 		new DataTable('#TheDrones', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}]})
     
