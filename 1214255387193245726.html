@@ -78,11 +78,11 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<option value=Demons>Demons</option>
 	
+	<option value=LostMinesofPhandelver>Lost Mines of Phandelver</option>
+	
 	<option value=StormKingsThunder>Storm King's Thunder</option>
 	
 	<option value=Promos>Promos</option>
-	
-	<option value=LostMinesofPhandelver>Lost Mines of Phandelver</option>
 	
 </select>
 
@@ -4617,6 +4617,67 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tbody>
 </table>
 
+<table id="LostMinesofPhandelver" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+			<th>Quantity</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+            <td>(#324) Gundren Rockseeker</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#325) Droop</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#326) Sildar Hallwinter</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#327) Iarno Albrek</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#328) King Grol</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#329) Nezznar - Black Spider*</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#330) Mormesk the Wraith</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#331) Venomfang*</td>
+	    <td>Yes</td>
+	    <td>1</td>
+	</tr>
+	
+	</tbody>
+</table>
+
 <table id="StormKingsThunder" class="display tbl" width="100%">
 	<thead>
 		<tr>
@@ -4708,67 +4769,6 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#332) Venomfang Promo</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	</tbody>
-</table>
-
-<table id="LostMinesofPhandelver" class="display tbl" width="100%">
-	<thead>
-		<tr>
-			<th>Card</th>
-			<th>Aquired?</th>
-			<th>Quantity</th>
-		</tr>
-	</thead>
-	<tbody>
-	
-	<tr>
-            <td>(#324) Gundren Rockseeker</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#325) Droop</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#326) Sildar Hallwinter</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#327) Iarno Albrek</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#328) King Grol</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#329) Nezznar - Black Spider*</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#330) Mormesk the Wraith</td>
-	    <td>Yes</td>
-	    <td>1</td>
-	</tr>
-	
-	<tr>
-            <td>(#331) Venomfang*</td>
 	    <td>Yes</td>
 	    <td>1</td>
 	</tr>
@@ -5051,6 +5051,16 @@ $(document).ready(function(){
 
 			})
     
+		new DataTable('#LostMinesofPhandelver', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
+				'rowCallback': function(row, data, index){
+						if (data[1] == 'Yes'){
+								$('td', row).css('color', '#7CFC00')
+						}
+				}
+
+
+			})
+    
 		new DataTable('#StormKingsThunder', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
@@ -5062,16 +5072,6 @@ $(document).ready(function(){
 			})
     
 		new DataTable('#Promos', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
-				'rowCallback': function(row, data, index){
-						if (data[1] == 'Yes'){
-								$('td', row).css('color', '#7CFC00')
-						}
-				}
-
-
-			})
-    
-		new DataTable('#LostMinesofPhandelver', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
 								$('td', row).css('color', '#7CFC00')
