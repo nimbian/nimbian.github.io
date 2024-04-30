@@ -82,6 +82,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<option value=StormKingsThunder>Storm King's Thunder</option>
 	
+	<option value=Heroes>Heroes</option>
+	
 	<option value=Promos>Promos</option>
 	
 </select>
@@ -511,6 +513,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
 	
 	<tr>
+	    <td>2746</td>
+	    <td>20</td>
+	    <td>(#261) Leviathan</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>Yes</td>
+	    <td>Unlimited</td>
+	    <td>607.240</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
 	    <td>1824</td>
 	    <td>1/8</td>
 	    <td>(#5) Kobold</td>
@@ -591,6 +605,30 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>No</td>
 	    <td>1st</td>
 	    <td>2.500</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2745</td>
+	    <td>11</td>
+	    <td>(#205) Behir</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>14.680</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2747</td>
+	    <td>2</td>
+	    <td>(#79) Merrow</td>
+	    <td>BS</td>
+	    <td>8</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>2.980</td>
 	    <td>Base Set</td>
 	</tr>
 	
@@ -1281,8 +1319,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#79) Merrow</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2037,8 +2075,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#205) Behir</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2373,8 +2411,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#261) Leviathan</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -4331,6 +4369,25 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tbody>
 </table>
 
+<table id="Heroes" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+			<th>Quantity</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+            <td>(#345) Womper</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	</tbody>
+</table>
+
 <table id="Promos" class="display tbl" width="100%">
 	<thead>
 		<tr>
@@ -4345,6 +4402,12 @@ h1 { font-family: "Kimberley", sans-serif }
             <td>(#332) Venomfang Promo</td>
 	    <td>Yes</td>
 	    <td>1</td>
+	</tr>
+	
+	<tr>
+            <td>(#344) Harshnag Promo</td>
+	    <td>No</td>
+	    <td>0</td>
 	</tr>
 	
 	</tbody>
@@ -4636,6 +4699,16 @@ $(document).ready(function(){
 			})
     
 		new DataTable('#StormKingsThunder', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
+				'rowCallback': function(row, data, index){
+						if (data[1] == 'Yes'){
+								$('td', row).css('color', '#7CFC00')
+						}
+				}
+
+
+			})
+    
+		new DataTable('#Heroes', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
 								$('td', row).css('color', '#7CFC00')
