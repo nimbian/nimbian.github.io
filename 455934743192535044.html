@@ -82,6 +82,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<option value=StormKingsThunder>Storm King's Thunder</option>
 	
+	<option value=Heroes>Heroes</option>
+	
 	<option value=Promos>Promos</option>
 	
 </select>
@@ -101,6 +103,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
     </thead>
     <tbody>
+	
+	<tr>
+	    <td>2703</td>
+	    <td>7</td>
+	    <td>(#165) Black Abishai</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>5.390</td>
+	    <td>Devils</td>
+	</tr>
 	
 	<tr>
 	    <td>2530</td>
@@ -124,6 +138,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>Unlimited</td>
 	    <td>30.840</td>
 	    <td>A Gazing Grace</td>
+	</tr>
+	
+	<tr>
+	    <td>2705</td>
+	    <td>3</td>
+	    <td>(#104) Mummy</td>
+	    <td>BS</td>
+	    <td>6</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>2.316</td>
+	    <td>Dead or Alive?</td>
 	</tr>
 	
 	<tr>
@@ -171,6 +197,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>No</td>
 	    <td>Unlimited</td>
 	    <td>0.900</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2704</td>
+	    <td>29</td>
+	    <td>(#319) Rak Tulkhesh</td>
+	    <td>BS</td>
+	    <td>6</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>1018.320</td>
 	    <td>Base Set</td>
 	</tr>
 	
@@ -843,8 +881,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#104) Mummy</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -1209,8 +1247,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#165) Black Abishai</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2133,8 +2171,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#319) Rak Tulkhesh</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2543,8 +2581,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#165) Black Abishai</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2921,8 +2959,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#104) Mummy</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -3743,6 +3781,25 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tbody>
 </table>
 
+<table id="Heroes" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+			<th>Quantity</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+            <td>(#345) Womper</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	</tbody>
+</table>
+
 <table id="Promos" class="display tbl" width="100%">
 	<thead>
 		<tr>
@@ -3755,6 +3812,12 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#332) Venomfang Promo</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	<tr>
+            <td>(#344) Harshnag Promo</td>
 	    <td>No</td>
 	    <td>0</td>
 	</tr>
@@ -4048,6 +4111,16 @@ $(document).ready(function(){
 			})
     
 		new DataTable('#StormKingsThunder', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
+				'rowCallback': function(row, data, index){
+						if (data[1] == 'Yes'){
+								$('td', row).css('color', '#7CFC00')
+						}
+				}
+
+
+			})
+    
+		new DataTable('#Heroes', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
 								$('td', row).css('color', '#7CFC00')
