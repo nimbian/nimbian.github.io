@@ -82,6 +82,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<option value=StormKingsThunder>Storm King's Thunder</option>
 	
+	<option value=Heroes>Heroes</option>
+	
 	<option value=Promos>Promos</option>
 	
 </select>
@@ -175,6 +177,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
 	
 	<tr>
+	    <td>2797</td>
+	    <td>6</td>
+	    <td>(#159) White Abishai</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>4.160</td>
+	    <td>Devils</td>
+	</tr>
+	
+	<tr>
 	    <td>236</td>
 	    <td>7</td>
 	    <td>(#165) Black Abishai</td>
@@ -183,6 +197,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>No</td>
 	    <td>1st</td>
 	    <td>5.380</td>
+	    <td>Devils</td>
+	</tr>
+	
+	<tr>
+	    <td>2795</td>
+	    <td>8</td>
+	    <td>(#176) Chain Devil</td>
+	    <td>BS</td>
+	    <td>6</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>8.328</td>
 	    <td>Devils</td>
 	</tr>
 	
@@ -723,6 +749,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>No</td>
 	    <td>1st</td>
 	    <td>3.765</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2796</td>
+	    <td>12</td>
+	    <td>(#212) Eidolon</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>18.820</td>
 	    <td>Base Set</td>
 	</tr>
 	
@@ -1701,8 +1739,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#159) White Abishai</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -1803,8 +1841,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#176) Chain Devil</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2020,7 +2058,7 @@ h1 { font-family: "Kimberley", sans-serif }
 	<tr>
             <td>(#212) Eidolon</td>
 	    <td>Yes</td>
-	    <td>1</td>
+	    <td>2</td>
 	</tr>
 	
 	<tr>
@@ -3065,8 +3103,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#159) White Abishai</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -3077,8 +3115,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#176) Chain Devil</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -4271,6 +4309,25 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tbody>
 </table>
 
+<table id="Heroes" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+			<th>Quantity</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+            <td>(#345) Womper</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	</tbody>
+</table>
+
 <table id="Promos" class="display tbl" width="100%">
 	<thead>
 		<tr>
@@ -4283,6 +4340,12 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#332) Venomfang Promo</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	<tr>
+            <td>(#344) Harshnag Promo</td>
 	    <td>No</td>
 	    <td>0</td>
 	</tr>
@@ -4576,6 +4639,16 @@ $(document).ready(function(){
 			})
     
 		new DataTable('#StormKingsThunder', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
+				'rowCallback': function(row, data, index){
+						if (data[1] == 'Yes'){
+								$('td', row).css('color', '#7CFC00')
+						}
+				}
+
+
+			})
+    
+		new DataTable('#Heroes', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
 								$('td', row).css('color', '#7CFC00')
