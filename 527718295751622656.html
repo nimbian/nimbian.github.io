@@ -82,6 +82,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<option value=StormKingsThunder>Storm King's Thunder</option>
 	
+	<option value=Heroes>Heroes</option>
+	
 	<option value=Promos>Promos</option>
 	
 </select>
@@ -727,6 +729,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
 	
 	<tr>
+	    <td>2686</td>
+	    <td>28</td>
+	    <td>(#317) Gold Greatwyrm</td>
+	    <td>BS</td>
+	    <td>10</td>
+	    <td>Yes</td>
+	    <td>Unlimited</td>
+	    <td>8152.695</td>
+	    <td>The Greatwyrms</td>
+	</tr>
+	
+	<tr>
 	    <td>741</td>
 	    <td>22</td>
 	    <td>(#273) Cradle of the Hill Scion</td>
@@ -1291,6 +1305,18 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tr>
 	
 	<tr>
+	    <td>2754</td>
+	    <td>1/4</td>
+	    <td>(#29) Wolf</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>0.680</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
 	    <td>1108</td>
 	    <td>5</td>
 	    <td>(#141) Otyugh</td>
@@ -1371,6 +1397,30 @@ h1 { font-family: "Kimberley", sans-serif }
 	    <td>No</td>
 	    <td>1st</td>
 	    <td>3.012</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2752</td>
+	    <td>7</td>
+	    <td>(#166) Grick Alpha</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>5.390</td>
+	    <td>Base Set</td>
+	</tr>
+	
+	<tr>
+	    <td>2753</td>
+	    <td>6</td>
+	    <td>(#157) Invisible Stalker</td>
+	    <td>BS</td>
+	    <td>5</td>
+	    <td>No</td>
+	    <td>Unlimited</td>
+	    <td>4.160</td>
 	    <td>Base Set</td>
 	</tr>
 	
@@ -1581,8 +1631,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#29) Wolf</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -2350,7 +2400,7 @@ h1 { font-family: "Kimberley", sans-serif }
 	<tr>
             <td>(#157) Invisible Stalker</td>
 	    <td>Yes</td>
-	    <td>1</td>
+	    <td>2</td>
 	</tr>
 	
 	<tr>
@@ -2403,8 +2453,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#166) Grick Alpha</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -3309,8 +3359,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#317) Gold Greatwyrm</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -4504,8 +4554,8 @@ h1 { font-family: "Kimberley", sans-serif }
 	
 	<tr>
             <td>(#317) Gold Greatwyrm</td>
-	    <td>No</td>
-	    <td>0</td>
+	    <td>Yes</td>
+	    <td>1</td>
 	</tr>
 	
 	<tr>
@@ -4931,6 +4981,25 @@ h1 { font-family: "Kimberley", sans-serif }
 	</tbody>
 </table>
 
+<table id="Heroes" class="display tbl" width="100%">
+	<thead>
+		<tr>
+			<th>Card</th>
+			<th>Aquired?</th>
+			<th>Quantity</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	<tr>
+            <td>(#345) Womper</td>
+	    <td>No</td>
+	    <td>0</td>
+	</tr>
+	
+	</tbody>
+</table>
+
 <table id="Promos" class="display tbl" width="100%">
 	<thead>
 		<tr>
@@ -5242,6 +5311,16 @@ $(document).ready(function(){
 			})
     
 		new DataTable('#StormKingsThunder', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
+				'rowCallback': function(row, data, index){
+						if (data[1] == 'Yes'){
+								$('td', row).css('color', '#7CFC00')
+						}
+				}
+
+
+			})
+    
+		new DataTable('#Heroes', { order: [[2, 'asc']], columnDefs: [{type: 'natural', targets:0}], 
 				'rowCallback': function(row, data, index){
 						if (data[1] == 'Yes'){
 								$('td', row).css('color', '#7CFC00')
